@@ -1,0 +1,115 @@
+int led1[14]={0,1,2,3,4,5,6,7,8,9,10,11,12,13};
+int led2[14]={13,12,11,10,9,8,7,6,5,4,3,2,1,0};
+int i;
+
+void setup() {
+  // put your setup code here, to run once:
+pinMode(0,OUTPUT);
+pinMode(1,OUTPUT);
+pinMode(2,OUTPUT);
+pinMode(3,OUTPUT);
+pinMode(4,OUTPUT);
+pinMode(5,OUTPUT);
+pinMode(6,OUTPUT);
+pinMode(7,OUTPUT);
+pinMode(8,OUTPUT);
+pinMode(9,OUTPUT);
+pinMode(10,OUTPUT);
+pinMode(11,OUTPUT);
+pinMode(12,OUTPUT);
+pinMode(13,OUTPUT);
+
+}
+
+void loop() {
+ 
+juego1();
+fin();
+
+juego2();
+fin();
+
+juego3();
+fin();
+
+}
+
+void fin(){
+    apagar();
+    delay(50);
+    encender();
+    delay(50);
+    apagar();
+    delay(50);
+    encender();
+    delay(50);
+    apagar();
+    delay(50);
+    encender();
+    delay(50);
+    apagar();
+    delay(50);  
+  }
+
+void juego1(){
+  i=0;
+  for (;i<=13;i++){
+    digitalWrite (led1[i],HIGH);
+    digitalWrite (led2[i],HIGH);
+    delay (100);
+    digitalWrite (led1[i],LOW);
+    digitalWrite (led2[i],LOW);
+    delay (100);
+    
+  
+    }
+}
+
+
+
+void juego2(){
+    i=0;
+    for (;i<=5;i++){
+      digitalWrite(led1[i],HIGH);
+      delay(80);
+      digitalWrite(led1[i],LOW);
+      digitalWrite(led1[i],HIGH);
+    
+     }
+    
+    i=13;
+    
+    for (;i>=6;i--){
+      digitalWrite(led1[i],HIGH);
+      delay (80);
+      digitalWrite(led1[i],LOW);
+      digitalWrite(led1[i],HIGH);
+
+       }
+
+}
+
+void juego3(){
+    i=0;
+    for (;i<=13;i++){
+    digitalWrite (led1[i],HIGH);
+    digitalWrite (led2[i],LOW);
+    delay (90);
+    digitalWrite (led1[i],HIGH);
+    digitalWrite (led2[i],LOW);
+    delay (90);}}
+
+
+void apagar (){
+    int i=0;                          
+    for(;i<=13;i++){                  
+    digitalWrite(led1[i],LOW);   
+    } 
+  }
+
+void encender(){                  
+    i=0;                             
+    for(;i<=13;i++){                
+    digitalWrite(led1[i],HIGH);  
+    }
+}
